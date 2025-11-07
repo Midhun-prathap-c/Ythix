@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YTHIX - Next-Gen Learning Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <script type="importmap">
+  {
+    "imports": {
+      "react": "https://aistudiocdn.com/react@^19.2.0",
+      "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+      "react/": "https://aistudiocdn.com/react@^19.2.0/",
+      "three": "https://aistudiocdn.com/three@^0.181.0"
+    }
+  }
+  </script>
+
+  <style>
+    body {
+      background-color: #00000a;
+      font-family: 'Inter', sans-serif;
+      color: #fff;
+    }
+    .animation-delay-3000 {
+        animation-delay: 3s;
+    }
+    @keyframes scroll-down {
+      from { transform: translateY(0); }
+      to { transform: translateY(-50%); }
+    }
+    @keyframes scroll-up {
+      from { transform: translateY(-50%); }
+      to { transform: translateY(0); }
+    }
+    .animate-scroll-down {
+      animation: scroll-down 30s linear infinite;
+    }
+    .animate-scroll-up {
+      animation: scroll-up 30s linear infinite;
+    }
+    .hero-image-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(77, 255, 195, 0.5);
+    }
+
+    .futuristic-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .futuristic-card:hover {
+        transform: translateY(-10px) perspective(1000px) rotateX(5deg);
+        box-shadow: 0 20px 40px rgba(0, 255, 255, 0.1);
+        border-color: rgba(0, 255, 255, 0.3);
+    }
+    
+    .neomorphism-card {
+        background: linear-gradient(145deg, #1c1c1c, #161616);
+        box-shadow: 8px 8px 16px #121212, -8px -8px 16px #222222;
+    }
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+    }
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+    
+    .glowing-orb-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        pointer-events: none;
+    }
+    .glowing-orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.4;
+    }
+    .orb1 {
+        width: 300px;
+        height: 300px;
+        top: -100px;
+        left: -100px;
+        background: rgba(0, 255, 255, 0.3);
+        animation: pulse 8s infinite alternate;
+    }
+    .orb2 {
+        width: 300px;
+        height: 300px;
+        bottom: -100px;
+        right: -100px;
+        background: rgba(77, 255, 195, 0.3);
+        animation: pulse 10s infinite alternate;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(0.8); opacity: 0.3; }
+        100% { transform: scale(1.2); opacity: 0.5; }
+    }
+    
+    @keyframes background-pan {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .background-pan {
+        background-size: 200% 200%;
+        animation: background-pan 15s ease infinite;
+    }
+    
+    @keyframes pulse-slow {
+        0%, 100% { transform: scale(1); box-shadow: 0 0 30px rgba(77, 255, 195, 0.6); }
+        50% { transform: scale(1.05); box-shadow: 0 0 45px rgba(77, 255, 195, 0.8); }
+    }
+    .animate-pulse-slow {
+        animation: pulse-slow 3s infinite;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
