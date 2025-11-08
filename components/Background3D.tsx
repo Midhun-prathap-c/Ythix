@@ -103,7 +103,7 @@ const Background3D: React.FC = () => {
             // Move stars forward
             const starPositions = starGeometry.attributes.position.array as Float32Array;
             for (let i = 0; i < starPositions.length; i += 3) {
-                starPositions[i + 2] += 0.5;
+                starPositions[i + 2] += 0.1; // Reduced from 0.5
                 if (starPositions[i + 2] > camera.position.z + 999) {
                     starPositions[i + 2] = -1000; 
                 }
@@ -111,13 +111,13 @@ const Background3D: React.FC = () => {
             starGeometry.attributes.position.needsUpdate = true;
             
             // Slowly drift/rotate nebula
-            nebula.rotation.y += delta * 0.02;
+            nebula.rotation.y += delta * 0.005; // Reduced from 0.02
 
             // Subtle parallax effect based on mouse position
-            stars.rotation.y = mouse.x * 0.2;
-            stars.rotation.x = mouse.y * 0.2;
-            nebula.rotation.y += mouse.x * 0.05;
-            nebula.rotation.x += mouse.y * 0.05;
+            stars.rotation.y = mouse.x * 0.05; // Reduced from 0.2
+            stars.rotation.x = mouse.y * 0.05; // Reduced from 0.2
+            nebula.rotation.y += mouse.x * 0.01; // Reduced from 0.05
+            nebula.rotation.x += mouse.y * 0.01; // Reduced from 0.05
             
             renderer.render(scene, camera);
             animationFrameId = requestAnimationFrame(animate);
